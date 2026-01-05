@@ -22,12 +22,13 @@ including potential Android support.
 - JSON (System.Text.Json)
 
 ## Project Structure
+```text
 WorkTaskList
 ├ Models → Task model definitions
 ├ Services → Business logic and data handling
 ├ Data → JSON data storage
 └ UI → Windows Forms interface
-
+```
 
 ## Architecture
 The application separates business logic from the user interface.
