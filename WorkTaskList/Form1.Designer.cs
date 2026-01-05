@@ -42,56 +42,72 @@ namespace WorkTaskList
             // 
             // txtTask
             // 
-            txtTask.BackColor = SystemColors.Window;
+            txtTask.BackColor = SystemColors.Menu;
             txtTask.Location = new Point(54, 12);
             txtTask.Name = "txtTask";
+            txtTask.PlaceholderText = "Yeni Görev Gir...";
             txtTask.Size = new Size(701, 23);
             txtTask.TabIndex = 0;
-            txtTask.Text = "Yeni Görev Gir";
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(680, 41);
+            btnAdd.BackColor = Color.MediumSeaGreen;
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnAdd.ForeColor = SystemColors.Control;
+            btnAdd.Location = new Point(680, 45);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 23);
+            btnAdd.Size = new Size(75, 34);
             btnAdd.TabIndex = 1;
             btnAdd.Text = "Ekle";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
             // lstTasks
             // 
+            lstTasks.BackColor = SystemColors.Menu;
+            lstTasks.DrawMode = DrawMode.OwnerDrawFixed;
             lstTasks.FormattingEnabled = true;
             lstTasks.ItemHeight = 15;
             lstTasks.Location = new Point(12, 175);
             lstTasks.Name = "lstTasks";
             lstTasks.Size = new Size(776, 259);
             lstTasks.TabIndex = 2;
+            lstTasks.DrawItem += lstTasks_DrawItem;
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(680, 70);
+            btnDelete.BackColor = Color.Firebrick;
+            btnDelete.Cursor = Cursors.Hand;
+            btnDelete.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnDelete.ForeColor = SystemColors.Control;
+            btnDelete.Location = new Point(680, 85);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(75, 23);
+            btnDelete.Size = new Size(75, 34);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Sil";
-            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.UseVisualStyleBackColor = false;
             btnDelete.Click += btnDelete_Click;
             // 
             // btnToggle
             // 
-            btnToggle.Location = new Point(670, 132);
+            btnToggle.BackColor = Color.SlateBlue;
+            btnToggle.Cursor = Cursors.Hand;
+            btnToggle.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 162);
+            btnToggle.ForeColor = SystemColors.Control;
+            btnToggle.Location = new Point(670, 125);
             btnToggle.Name = "btnToggle";
-            btnToggle.Size = new Size(95, 23);
+            btnToggle.Size = new Size(95, 35);
             btnToggle.TabIndex = 4;
             btnToggle.Text = "Tamamlandı";
-            btnToggle.UseVisualStyleBackColor = true;
+            btnToggle.UseVisualStyleBackColor = false;
             btnToggle.Click += btnToggle_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(189, 189, 189);
             ClientSize = new Size(800, 450);
             Controls.Add(btnToggle);
             Controls.Add(btnDelete);

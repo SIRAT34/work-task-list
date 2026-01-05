@@ -7,6 +7,7 @@ namespace WorkTaskList
             InitializeComponent();
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
             _taskService.Load();
@@ -19,7 +20,7 @@ namespace WorkTaskList
 
             foreach (var task in _taskService.GetAll())
             {
-                string status = task.IsCompleted ? "[TAMAMLANMIÞ] " : "[] ";
+                string status = task.IsCompleted ? "TAMAMLANDI - " : "BEKLENÝYOR - ";
                 lstTasks.Items.Add($"{status}{task.Title}");
             }
 
@@ -49,5 +50,27 @@ namespace WorkTaskList
             _taskService.Toggle(task.Id);
             RefreshList();
         }
+
+        private void lstTasks_DrawItem(object sender, DrawItemEventArgs e)
+        {
+            if (e.Index < 0) return;
+
+            var task = _taskService.GetAll()[e.Index];
+
+            Color textColor = task.IsCompleted ? Color.Green : Color.Red;
+
+            e.DrawBackground();
+            using (Brush brush = new SolidBrush(textColor))
+            {
+                e.Graphics.DrawString(
+                    lstTasks.Items[e.Index].ToString(),
+                    e.Font,
+                    brush,
+                    e.Bounds
+                );
+            }
+            e.DrawFocusRectangle();
+        }
+
     }
 }
