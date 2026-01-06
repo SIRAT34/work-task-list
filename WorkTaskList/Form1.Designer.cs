@@ -6,6 +6,8 @@ namespace WorkTaskList
 {
     partial class Form1
     {
+
+        // Görevler üzerinde işlem yapan servis nesnesi
         private TaskService _taskService = new();
         /// <summary>
         ///  Required designer variable.
